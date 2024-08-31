@@ -1,0 +1,7 @@
+# Copyright (c) 2021 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+config SHIELD_CONCAVE_GRANITE_LEFT
+    def_bool $(shields_list_contains,concave_granite_left)
+
+config SHIELD_CONCAVE_GRANITE_RIGHT
+    def_bool $(shields_list_contains,concave_granite_right)

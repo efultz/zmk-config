@@ -19,6 +19,6 @@
 ---
 include:
   - board: nice_nano
-    shield: redox_left
+    shield: concave_granite_left
   - board: nice_nano
-    shield: redox_right
+    shield: concave_granite_right

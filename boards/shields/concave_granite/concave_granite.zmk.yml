@@ -1,0 +1,12 @@
+file_format: "1"
+id: concave_granite
+name: concave_granite
+type: shield
+url: https://github.com/mattdibi/zmk-config
+requires: [pro_micro]
+features:
+  - keys
+  - underglow
+siblings:
+  - concave_granite_left
+  - concave_granite_right
