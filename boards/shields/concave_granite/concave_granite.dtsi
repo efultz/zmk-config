@@ -50,3 +50,47 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)                                 
     };
 
 };
+
+/* the below pinctrl should already be included from the board: nice_nano dtsi
+
+&pinctrl {
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                <NRF_PSEL(TWIM_SCL, 0, 20)>;
+        };
+    };
+
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                <NRF_PSEL(TWIM_SCL, 0, 20)>;
+            low-power-enable;
+        };
+    };
+};
+
+*/
+
+/* the below is an example of another project using i2c for a ti fuel gauge, I think?
+
+&i2c0 {
+    status = "okay";
+    compatible = "nordic,nrf-twim";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+    clock-frequency = <100000>;
+
+    fuelgauge: bq274xx@55 {
+        compatible = "ti,bq274xx";
+        reg = <0x55>;
+        design-voltage = <3700>; //Battery Design Voltage in mV
+        design-capacity = <180>; //Battery Design Capacity in mAh
+        taper-current = <2>; //Battery Taper current in mAh 2.1
+        terminate-voltage = <2750>; //Battery Terminate Voltage in mV
+        int-gpios = <&gpio1 5 GPIO_ACTIVE_LOW>;
+    };
+};
+
+*/
